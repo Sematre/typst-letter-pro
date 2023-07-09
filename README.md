@@ -2,14 +2,19 @@
 A template for creating business letters following the DIN 5008 standard.
 
 ## Overview
-typst-letter provides a convenient and professional way to generate business letters with a standardized layout. The template follows the guidelines specified in the DIN 5008 standard, ensuring that your letters adhere to the commonly accepted business communication practices.
+typst-letter provides a convenient and professional way to generate business letters
+with a standardized layout. The template follows the guidelines specified in the
+DIN 5008 standard, ensuring that your letters adhere to the commonly accepted business
+communication practices.
 
-The goal of typst-letter is to simplify the process of creating business letters while maintaining a clean and professional appearance. It offers predefined sections for the sender and recipient information, subject, date, header, footer and more.
+The goal of typst-letter is to simplify the process of creating business letters
+while maintaining a clean and professional appearance. It offers predefined sections
+for the sender and recipient information, subject, date, header, footer and more.
 
 ## Example
 Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www.deutschepost.de/de/b/briefvorlagen/beschwerden.html#Einspruch)
 
-### Preview ([PDF version](https://))
+### Preview ([PDF version](https://raw.githubusercontent.com/wiki/Sematre/typst-letter/simple_letter.pdf))
 ![Image of a simple letter created with typst-letter](.github/assets/simple_letter.jpg)
 
 ### Code
@@ -47,9 +52,13 @@ Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www
 
 Sehr geehrte Damen und Herren,
 
-die von mir bei den Werbekosten geltend gemachte Abschreibung für den im vergangenen Jahr angeschafften Fotokopierer wurde von Ihnen nicht berücksichtigt. Der Fotokopierer steht in meinem Büro und wird von mir ausschließlich zu beruflichen Zwecken verwendet.
+die von mir bei den Werbekosten geltend gemachte Abschreibung für den im
+vergangenen Jahr angeschafften Fotokopierer wurde von Ihnen nicht berücksichtigt.
+Der Fotokopierer steht in meinem Büro und wird von mir ausschließlich zu beruflichen
+Zwecken verwendet.
 
-Ich lege deshalb Einspruch gegen den oben genannten Einkommensteuerbescheid ein und bitte Sie, die Abschreibung anzuerkennen.
+Ich lege deshalb Einspruch gegen den oben genannten Einkommensteuerbescheid ein
+und bitte Sie, die Abschreibung anzuerkennen.
 
 Anbei erhalten Sie eine Kopie der Rechnung des Gerätes.
 
@@ -66,9 +75,11 @@ Anja Ahlsen
 Download ``letter.typ`` and place ist next to your ``main.typ`` file.
 
 ## Contributing
-Contributions to typst-letter are welcome! If you encounter any issues or have suggestions for improvements, please open an issue on GitHub or submit a pull request.
+Contributions to typst-letter are welcome! If you encounter any issues or have
+suggestions for improvements, please open an issue on GitHub or submit a pull request.
 
-Before making any significant changes, please discuss your ideas with the project maintainers to ensure they align with the project's goals and direction.
+Before making any significant changes, please discuss your ideas with the project
+maintainers to ensure they align with the project's goals and direction.
 
 ## Acknowledgments
 This project is inspired by the following projects and resources:
