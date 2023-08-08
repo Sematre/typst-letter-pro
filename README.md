@@ -21,8 +21,7 @@ Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www
 ```typst
 #import "letter.typ": letter_simple
 
-#set par(justify: true)
-#set text(hyphenate: false)
+#set text(lang: "de")
 
 #show: letter_simple.with(
   sender: (
