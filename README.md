@@ -1,25 +1,27 @@
-# typst-letter
+# typst-letter-pro
 A template for creating business letters following the DIN 5008 standard.
 
 ## Overview
-typst-letter provides a convenient and professional way to generate business letters
+typst-letter-pro provides a convenient and professional way to generate business letters
 with a standardized layout. The template follows the guidelines specified in the
 DIN 5008 standard, ensuring that your letters adhere to the commonly accepted business
 communication practices.
 
-The goal of typst-letter is to simplify the process of creating business letters
+The goal of typst-letter-pro is to simplify the process of creating business letters
 while maintaining a clean and professional appearance. It offers predefined sections
 for the sender and recipient information, subject, date, header, footer and more.
+
+## [Documentation](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/documentation.pdf)
 
 ## Example
 Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www.deutschepost.de/de/b/briefvorlagen/beschwerden.html#Einspruch)
 
-### Preview ([PDF version](https://raw.githubusercontent.com/wiki/Sematre/typst-letter/simple_letter.pdf))
-![Image of a simple letter created with typst-letter](.github/assets/simple_letter.jpg)
+### Preview ([PDF version](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/simple_letter.pdf))
+![Image of a simple letter created with typst-letter-pro](.github/assets/simple_letter.jpg)
 
 ### Code
 ```typst
-#import "letter.typ": letter_simple
+#import "@preview/letter-pro:1.0.0": letter_simple
 
 #set text(lang: "de")
 
@@ -71,10 +73,12 @@ Anja Ahlsen
 ```
 
 ## Usage
-Download ``letter.typ`` and place ist next to your ``main.typ`` file.
+```typst
+#import "@preview/letter-pro:1.0.0": letter_simple
+```
 
 ## Contributing
-Contributions to typst-letter are welcome! If you encounter any issues or have
+Contributions to typst-letter-pro are welcome! If you encounter any issues or have
 suggestions for improvements, please open an issue on GitHub or submit a pull request.
 
 Before making any significant changes, please discuss your ideas with the project
