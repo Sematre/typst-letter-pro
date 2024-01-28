@@ -7,4 +7,3 @@ license = "MIT"
 description = "DIN 5008 letter template for Typst."
 repository = "https://github.com/Sematre/typst-letter-pro"
 keywords = ["letter", "din5008"]
-exclude = ["/.github/*", "/docs/*"]
