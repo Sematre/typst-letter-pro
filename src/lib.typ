@@ -54,7 +54,7 @@
 /// - folding-marks (boolean): The folding marks that will be displayed at the left margin.
 /// - hole-mark (boolean): The hole mark that will be displayed at the left margin.
 /// 
-/// - address-box (content, none): The letter's address box, which is displayed below the header on the left.
+/// - address-box (content, none): The address box that will be displayed below the header on the left.
 /// 
 /// - information-box (content, none): The information box that will be displayed below below the header on the right.
 /// - reference-signs (array, none): The reference signs that will be displayed below below the the address box. The array has to be a collection of tuples with 2 content elements.
@@ -401,7 +401,7 @@
 
 /// This function takes your whole document as its `body` and formats it as a simple letter.
 /// 
-/// Font is set to _Source Sans Pro_ without hyphenation.
+/// Font is set to _Source Sans Pro_ without hyphenation. The body text will be justified.
 /// 
 /// - format (string): The format of the letter, which decides the position of the folding marks and the size of the header.
 ///   #table(

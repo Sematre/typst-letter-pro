@@ -6,6 +6,12 @@
 )
 
 #let project-version = "1.0.0"
+#let project-authors = "Sematre"
+
+#set document(
+  title: "Documentation for typst-letter-pro (Version " + project-version + ")",
+  author: project-authors,
+)
 
 #set page(
   numbering: "1",
@@ -72,7 +78,7 @@
     )
   )
 
-  _by Sematre_
+  _by #(project-authors)_
 
   #v(5%)
   #text(blue)[https://github.com/Sematre/typst-letter-pro]
@@ -152,13 +158,13 @@ The `letter-simple` function is an abstraction of the `letter-generic` function,
 
 == Generic layout
 #figure(
-  rect(inset: 0.5pt, image("assets/letter-generic-layout.svg", height: 85%)),
+  rect(inset: 0.5pt, image("/docs/assets/letter-generic-layout.svg", height: 85%)),
   caption: [Page layout of `letter-generic`. Every layout option is highlighted.],
 ) <figure-pagebox-generic>
 
 == Simple layout
 #figure(
-  rect(inset: 0.5pt, image("assets/letter-simple-layout.svg", height: 85%)),
+  rect(inset: 0.5pt, image("/docs/assets/letter-simple-layout.svg", height: 85%)),
   caption: [Page layout of `letter-simple`. Every layout option is highlighted.],
 ) <figure-pagebox-simple>
 
@@ -167,7 +173,7 @@ The `letter-simple` function is an abstraction of the `letter-generic` function,
 Deutsche Post offers digital franking marks that can be placed inside the address box of your letters. typst-letter-pro gives you an option to leave a little extra space for a stamp between the sender box and the recipient box.
 
 #figure(
-  rect(image("assets/stamp.svg", width: 35%)),
+  rect(image("/docs/assets/stamp.svg", width: 35%)),
   caption: [Deutsche Post "Internetmarke"],
 )
 
@@ -181,7 +187,7 @@ Enable stamping in your code:
 )
 ```
 
-Then generate the PDF and place the stamp using #link("https://github.com/qpdf/qpdf", text(fill: blue, "qpdf")):
+Then generate the PDF and place the stamp using #link("https://github.com/qpdf/qpdf", text(fill: blue, "qpdf")) #footnote[https://github.com/qpdf/qpdf]:
 
 ```sh
 $ qpdf path/to/letter.pdf --overlay path/to/stamp.pdf -- path/to/output.pdf
