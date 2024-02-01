@@ -21,7 +21,7 @@ Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www
 
 ### Code
 ```typst
-#import "@preview/letter-pro:1.0.0": letter_simple
+#import "@local/letter-pro:1.0.0": letter_simple
 
 #set text(lang: "de")
 
@@ -73,8 +73,14 @@ Anja Ahlsen
 ```
 
 ## Usage
+Install typst-letter-pro in the local package namespace using Git:
+```sh
+$ git clone -c advice.detachedHead=false https://github.com/Sematre/typst-letter-pro.git --depth 1 --branch v1.0.0 ~/.local/share/typst/packages/local/letter-pro/1.0.0
+```
+
+Then import it the package in your document:
 ```typst
-#import "@preview/letter-pro:1.0.0": letter_simple
+#import "@local/letter-pro:1.0.0": letter_simple
 ```
 
 ## Contributing
