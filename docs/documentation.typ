@@ -184,7 +184,7 @@ Enable stamping in your code:
 Then generate the PDF and place the stamp using #link("https://github.com/qpdf/qpdf", text(fill: blue, "qpdf")):
 
 ```sh
-$ qpdf path/to/letter.pdf --overlay path/to/stamp.pdf path/to/output.pdf
+$ qpdf path/to/letter.pdf --overlay path/to/stamp.pdf -- path/to/output.pdf
 ```
 
 Note: This *ONLY* works with stamps of the format "DIN A4 Normalpapier (Einlegeblatt)".
