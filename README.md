@@ -73,14 +73,23 @@ Anja Ahlsen
 ```
 
 ## Usage
-Install typst-letter-pro in the local package namespace using Git:
+### Local namespace
+Download the repository to the local package namespace using Git:
 ```sh
 $ git clone -c advice.detachedHead=false https://github.com/Sematre/typst-letter-pro.git --depth 1 --branch v1.0.0 ~/.local/share/typst/packages/local/letter-pro/1.0.0
 ```
 
-Then import it the package in your document:
+Then import the package in your document:
 ```typst
 #import "@local/letter-pro:1.0.0": letter_simple
+```
+
+### Manual
+Download the ``letter-pro-v1.0.0.typ`` file from the [releases page]([https://](https://github.com/Sematre/typst-letter-pro/releases)) and place it next to your document file.
+
+Then import the package in your document:
+```typst
+#import "letter-pro-v1.0.0.typ": letter_simple
 ```
 
 ## Contributing
