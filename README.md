@@ -21,11 +21,11 @@ Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www
 
 ### Code
 ```typst
-#import "@local/letter-pro:1.0.0": letter_simple
+#import "@local/letter-pro:1.0.0": letter-simple
 
 #set text(lang: "de")
 
-#show: letter_simple.with(
+#show: letter-simple.with(
   sender: (
     name: "Anja Ahlsen",
     address: "Deutschherrenufer 28, 60528 Frankfurt",
@@ -43,7 +43,7 @@ Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www
     60329 Frankfurt
   ],
   
-  reference_signs: (
+  reference-signs: (
     ([Steuernummer], [333/24692/5775]),
   ),
   
@@ -81,7 +81,7 @@ $ git clone -c advice.detachedHead=false https://github.com/Sematre/typst-letter
 
 Then import the package in your document:
 ```typst
-#import "@local/letter-pro:1.0.0": letter_simple
+#import "@local/letter-pro:1.0.0": letter-simple
 ```
 
 ### Manual
@@ -89,7 +89,7 @@ Download the ``letter-pro-v1.0.0.typ`` file from the [releases page](https://git
 
 Then import the package in your document:
 ```typst
-#import "letter-pro-v1.0.0.typ": letter_simple
+#import "letter-pro-v1.0.0.typ": letter-simple
 ```
 
 ## Contributing

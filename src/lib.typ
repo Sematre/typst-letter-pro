@@ -15,17 +15,17 @@
 // ##################
 // # Letter formats #
 // ##################
-#let letter_formats = (
+#let letter-formats = (
   "DIN-5008-A": (
-    folding_mark_1_pos: 87mm,
-    folding_mark_2_pos: 87mm + 105mm,
-    header_size: 27mm,
+    folding-mark-1-pos: 87mm,
+    folding-mark-2-pos: 87mm + 105mm,
+    header-size: 27mm,
   ),
   
   "DIN-5008-B": (
-    folding_mark_1_pos: 105mm,
-    folding_mark_2_pos: 105mm + 105mm,
-    header_size: 45mm,
+    folding-mark-1-pos: 105mm,
+    folding-mark-2-pos: 105mm + 105mm,
+    header-size: 45mm,
   ),
 )
 
@@ -51,13 +51,13 @@
 /// - header (content, none): The header that will be displayed at the top of the first page.
 /// - footer (content, none): The footer that will be displayed at the bottom of the first page. It automatically grows upwords depending on its body. Make sure to leave enough space in the page margins.
 /// 
-/// - folding_marks (boolean): The folding marks that will be displayed at the left margin.
-/// - hole_mark (boolean): The hole mark that will be displayed at the left margin.
+/// - folding-marks (boolean): The folding marks that will be displayed at the left margin.
+/// - hole-mark (boolean): The hole mark that will be displayed at the left margin.
 /// 
-/// - address_box (content, none): The letter's address box, which is displayed below the header on the left.
+/// - address-box (content, none): The letter's address box, which is displayed below the header on the left.
 /// 
-/// - information_box (content, none): The information box that will be displayed below below the header on the right.
-/// - reference_signs (array, none): The reference signs that will be displayed below below the the address box. The array has to be a collection of tuples with 2 content elements.
+/// - information-box (content, none): The information box that will be displayed below below the header on the right.
+/// - reference-signs (array, none): The reference signs that will be displayed below below the the address box. The array has to be a collection of tuples with 2 content elements.
 ///   
 ///   Example:
 ///   ```typ
@@ -67,7 +67,7 @@
 ///   )
 ///   ```
 /// 
-/// - page_numbering (string, function, none): Defines the format of the page numbers.
+/// - page-numbering (string, function, none): Defines the format of the page numbers.
 ///   #table(
 ///     columns: (auto, 1fr),
 ///     stroke: 0.5pt + gray,
@@ -77,8 +77,8 @@
 ///     [function], [
 ///       A function that returns the page number for each page.\
 ///       Parameters:
-///       - current_page (integer)
-///       - page_count (integer)
+///       - current-page (integer)
+///       - page-count (integer)
 ///       Return type: _content_
 ///     ],
 ///     [none],     [Disable page numbering.],
@@ -92,22 +92,22 @@
 /// 
 /// - body (content, none): The content of the letter
 /// -> content
-#let letter_generic(
+#let letter-generic(
   format: "DIN-5008-B",
   
   header: none,
   footer: none,
   
-  folding_marks: true,
-  hole_mark: true,
+  folding-marks: true,
+  hole-mark: true,
   
-  address_box: none,
-  information_box: none,
+  address-box: none,
+  information-box: none,
   
-  reference_signs: none,
+  reference-signs: none,
   
-  page_numbering: (current_page, page_count) => {
-    "Page " + str(current_page) + " of " + str(page_count)
+  page-numbering: (current-page, page-count) => {
+    "Page " + str(current-page) + " of " + str(page-count)
   },
 
   margin: (
@@ -119,8 +119,8 @@
   
   body,
 ) = {
-  if not letter_formats.keys().contains(format) {
-    panic("Invalid letter format! Options: " + letter_formats.keys().join(", "))
+  if not letter-formats.keys().contains(format) {
+    panic("Invalid letter format! Options: " + letter-formats.keys().join(", "))
   }
   
   margin = (
@@ -137,21 +137,21 @@
     margin: margin,
     
     background: {
-      if folding_marks {
+      if folding-marks {
         // folding mark 1
-        place(top + left, dx: 5mm, dy: letter_formats.at(format).folding_mark_1_pos, line(
+        place(top + left, dx: 5mm, dy: letter-formats.at(format).folding-mark-1-pos, line(
             length: 2.5mm,
             stroke: 0.25pt + black
         ))
         
         // folding mark 2
-        place(top + left, dx: 5mm, dy: letter_formats.at(format).folding_mark_2_pos, line(
+        place(top + left, dx: 5mm, dy: letter-formats.at(format).folding-mark-2-pos, line(
             length: 2.5mm,
             stroke: 0.25pt + black
         ))
       }
       
-      if hole_mark {
+      if hole-mark {
         // hole mark
         place(left + top, dx: 5mm, dy: 148.5mm, line(
           length: 4mm,
@@ -164,19 +164,19 @@
     footer: locate(loc => {
       show: pad.with(top: 12pt, bottom: 12pt)
       
-      let current_page = loc.page()
-      let page_count = counter(page).final(loc).at(0)
+      let current-page = loc.page()
+      let page-count = counter(page).final(loc).at(0)
       
       grid(
         columns: 1fr,
         rows: (0.65em, 1fr),
         row-gutter: 12pt,
         
-        if page_count > 1 {
-          align(right, page_numbering(current_page, page_count))
+        if page-count > 1 {
+          align(right, page-numbering(current-page, page-count))
         },
         
-        if current_page == 1 {
+        if current-page == 1 {
           footer
         }
       )
@@ -187,7 +187,7 @@
   pad(top: -margin.top, left: -margin.left, right: -margin.right, {
     grid(
       columns: 100%,
-      rows: (letter_formats.at(format).header_size, 45mm),
+      rows: (letter-formats.at(format).header-size, 45mm),
       
       // Header box
       header,
@@ -200,10 +200,10 @@
           column-gutter: 20mm,
           
           // Address box
-          address_box,
+          address-box,
           
           // Information box
-          pad(top: 5mm, information_box)
+          pad(top: 5mm, information-box)
         )
       }),
     )
@@ -212,7 +212,7 @@
   v(12pt)
 
   // Reference signs
-  if (reference_signs != none) and (reference_signs.len() > 0) {
+  if (reference-signs != none) and (reference-signs.len() > 0) {
     grid(
       // Total width: 175mm
       // Delimiter: 4.23mm
@@ -222,7 +222,7 @@
       rows: 12pt * 2,
       gutter: 12pt,
       
-      ..reference_signs.map(sign => {
+      ..reference-signs.map(sign => {
         let (key, value) = sign
         
         text(size: 8pt, key)
@@ -245,7 +245,7 @@
 /// - name (content, none): Name of the sender
 /// - address (content, none): Address of the sender
 /// - extra (content, none): Extra information about the sender
-#let header_simple(name, address, extra: none) = {
+#let header-simple(name, address, extra: none) = {
   set text(size: 10pt)
 
   if name != none {
@@ -267,7 +267,7 @@
 /// 
 /// - name (content, none): Name of the sender
 /// - address (content, none): Address of the sender
-#let sender_box(name: none, address) = rect(width: 85mm, height: 5mm, stroke: none, inset: 0pt, {
+#let sender-box(name: none, address) = rect(width: 85mm, height: 5mm, stroke: none, inset: 0pt, {
   set text(size: 7pt)
   set align(horizon)
   
@@ -289,7 +289,7 @@
 /// Creates a simple annotations box.
 /// 
 /// - content (content, none): The content
-#let annotations_box(content) = {
+#let annotations-box(content) = {
   set text(size: 7pt)
   set align(bottom)
   
@@ -299,7 +299,7 @@
 /// Creates a simple recipient box.
 /// 
 /// - content (content, none): The content
-#let recipient_box(content) = {
+#let recipient-box(content) = {
   set text(size: 10pt)
   set align(top)
   
@@ -319,11 +319,11 @@
 ///   [recipient\ 27.3mm],
 /// )
 /// 
-/// See also: _address_tribox_
+/// See also: _address-tribox_
 /// 
 /// - sender (content, none): The sender box
 /// - recipient (content, none): The recipient box
-#let address_duobox(sender, recipient) = {
+#let address-duobox(sender, recipient) = {
   grid(
     columns: 1,
     rows: (17.7mm, 27.3mm),
@@ -367,13 +367,13 @@
 ///   )
 /// )
 /// 
-/// See also: _address_duobox_
+/// See also: _address-duobox_
 /// 
 /// - sender (content, none): The sender box
 /// - annotations (content, none): The annotations box
 /// - recipient (content, none): The recipient box
 /// - stamp (boolean): Enable stamp repartitioning. If enabled, the annotations box and the recipient box divider is moved 8.46mm (about 2 lines) down.
-#let address_tribox(sender, annotations, recipient, stamp: false) = {
+#let address-tribox(sender, annotations, recipient, stamp: false) = {
   if stamp {
     grid(
       columns: 1,
@@ -419,8 +419,8 @@
 /// - header (content, none): The header that will be displayed at the top of the first page. If header is set to _none_, a default header will be generaded instead.
 /// - footer (content, none): The footer that will be displayed at the bottom of the first page. It automatically grows upwords depending on its body. Make sure to leave enough space in the page margins.
 /// 
-/// - folding_marks (boolean): The folding marks that will be displayed at the left margin.
-/// - hole_mark (boolean): The hole mark that will be displayed at the left margin.
+/// - folding-marks (boolean): The folding marks that will be displayed at the left margin.
+/// - hole-mark (boolean): The hole mark that will be displayed at the left margin.
 /// 
 /// - sender (dictionary): The sender that will be displayed below the header on the left.
 ///   
@@ -431,8 +431,8 @@
 /// - stamp (boolean): This will increase the annotations box size is by two lines in order to provide more room for the postage stamp that will be displayed below the sender.
 /// - annotations (content, none): The annotations box that will be displayed below the sender (or the stamp if enabled).
 /// 
-/// - information_box (content, none): The information box that will be displayed below below the header on the right.
-/// - reference_signs (array, none): The reference signs that will be displayed below below the the address box. The array has to be a collection of tuples with 2 content elements.
+/// - information-box (content, none): The information box that will be displayed below below the header on the right.
+/// - reference-signs (array, none): The reference signs that will be displayed below below the the address box. The array has to be a collection of tuples with 2 content elements.
 ///   
 ///   Example:
 ///   ```typ
@@ -445,7 +445,7 @@
 /// - date (content, none): The date that will be displayed on the right below the subject.
 /// - subject (string, none): The subject line and the document title.
 /// 
-/// - page_numbering (string, function, none): Defines the format of the page numbers.
+/// - page-numbering (string, function, none): Defines the format of the page numbers.
 ///   #table(
 ///     columns: (auto, 1fr),
 ///     stroke: 0.5pt + gray,
@@ -455,8 +455,8 @@
 ///     [function], [
 ///       A function that returns the page number for each page.\
 ///       Parameters:
-///       - current_page (integer)
-///       - page_count (integer)
+///       - current-page (integer)
+///       - page-count (integer)
 ///       Return type: _content_
 ///     ],
 ///     [none],     [Disable page numbering.],
@@ -470,14 +470,14 @@
 /// 
 /// - body (content, none): The content of the letter
 /// -> content
-#let letter_simple(
+#let letter-simple(
   format: "DIN-5008-B",
   
   header: none,
   footer: none,
 
-  folding_marks: true,
-  hole_mark: true,
+  folding-marks: true,
+  hole-mark: true,
   
   sender: (
     name: none,
@@ -490,14 +490,14 @@
   stamp: false,
   annotations: none,
   
-  information_box: none,
-  reference_signs: none,
+  information-box: none,
+  reference-signs: none,
   
   date: none,
   subject: none,
 
-  page_numbering: (current_page, page_count) => {
-    "Page " + str(current_page) + " of " + str(page_count)
+  page-numbering: (current-page, page-count) => {
+    "Page " + str(current-page) + " of " + str(page-count)
   },
 
   margin: (
@@ -532,7 +532,7 @@
       top: margin.top,
       bottom: 5mm,
       
-      align(bottom + right, header_simple(
+      align(bottom + right, header-simple(
         sender.name,
         if sender.address != none {
           sender.address.split(", ").join(linebreak())
@@ -544,30 +544,30 @@
     )
   }
 
-  let sender_box      = sender_box(name: sender.name, sender.address)
-  let annotations_box = annotations_box(annotations)
-  let recipient_box   = recipient_box(recipient)
+  let sender-box      = sender-box(name: sender.name, sender.address)
+  let annotations-box = annotations-box(annotations)
+  let recipient-box   = recipient-box(recipient)
 
-  let address_box     = address_tribox(sender_box, annotations_box, recipient_box, stamp: stamp)
+  let address-box     = address-tribox(sender-box, annotations-box, recipient-box, stamp: stamp)
   if annotations == none and stamp == false {
-    address_box = address_duobox(align(bottom, pad(bottom: 0.65em, sender_box)), recipient_box)
+    address-box = address-duobox(align(bottom, pad(bottom: 0.65em, sender-box)), recipient-box)
   }
   
-  letter_generic(
+  letter-generic(
     format: format,
     
     header: header,
     footer: footer,
 
-    folding_marks: folding_marks,
-    hole_mark: hole_mark,
+    folding-marks: folding-marks,
+    hole-mark: hole-mark,
     
-    address_box:     address_box,
-    information_box: information_box,
+    address-box:     address-box,
+    information-box: information-box,
 
-    reference_signs: reference_signs,
+    reference-signs: reference-signs,
 
-    page_numbering: page_numbering,
+    page-numbering: page-numbering,
     
     {
       // Add the date line, if any.

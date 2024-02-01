@@ -5,15 +5,15 @@
   hyphenate: false,
 )
 
-#let project_version = "1.0.0"
+#let project-version = "1.0.0"
 
 #set page(
   numbering: "1",
 
   footer: locate(loc => {
-    let current_page = counter(page).at(loc).at(0)
+    let current-page = counter(page).at(loc).at(0)
 
-    if current_page > 1 {
+    if current-page > 1 {
       grid(
         columns: (auto, 1fr, auto),
         gutter: 0.65em,
@@ -27,11 +27,11 @@
           
           text(6pt)[
             #set align(center + horizon)
-            Version #project_version
+            Version #project-version
           ]
         ),
         
-        numbering("1", current_page),
+        numbering("1", current-page),
       )
     }
   })
@@ -61,7 +61,7 @@
       radius: 5pt,
       fill: blue.lighten(70%),
       
-      text(12pt)[Version #project_version]
+      text(12pt)[Version #project-version]
     ),
     
     rect(
@@ -108,11 +108,11 @@ The goal of typst-letter-pro is to simplify the process of creating business let
 = Quickstart
 
 ```typ
-#import "@local/letter-pro:1.0.0": letter_simple
+#import "@local/letter-pro:1.0.0": letter-simple
 
 #set text(lang: "de")
 
-#show: letter_simple.with(
+#show: letter-simple.with(
   sender: (
     name: "Anja Ahlsen",
     address: "Deutschherrenufer 28, 60528 Frankfurt",
@@ -130,7 +130,7 @@ The goal of typst-letter-pro is to simplify the process of creating business let
     60329 Frankfurt
   ],
   
-  reference_signs: (
+  reference-signs: (
     ([Steuernummer], [333/24692/5775]),
   ),
   
@@ -147,20 +147,20 @@ Anja Ahlsen
 ```
 
 = Simple vs. Generic
-typst-letter-pro offers 2 ways to create a letter: `letter_generic` and `letter_simple`.
-The `letter_simple` function is an abstraction of the `letter_generic` function, which makes it easier to write a letter, without much extra work. It tries to have sane defaults for most applications but still wants to offer some dedgree of customizability. Your first choice should be the `letter_simple` function. Use the `letter_generic` function if you want to have as much control over the layout as possible. Helper functions are a way to make use of both worlds.
+typst-letter-pro offers 2 ways to create a letter: `letter-generic` and `letter-simple`.
+The `letter-simple` function is an abstraction of the `letter-generic` function, which makes it easier to write a letter, without much extra work. It tries to have sane defaults for most applications but still wants to offer some dedgree of customizability. Your first choice should be the `letter-simple` function. Use the `letter-generic` function if you want to have as much control over the layout as possible. Helper functions are a way to make use of both worlds.
 
 == Generic layout
 #figure(
-  rect(inset: 0.5pt, image("assets/letter_generic_layout.svg", height: 85%)),
-  caption: [Page layout of `letter_generic`. Every layout option is highlighted.],
-) <figure_pagebox_generic>
+  rect(inset: 0.5pt, image("assets/letter-generic-layout.svg", height: 85%)),
+  caption: [Page layout of `letter-generic`. Every layout option is highlighted.],
+) <figure-pagebox-generic>
 
 == Simple layout
 #figure(
-  rect(inset: 0.5pt, image("assets/letter_simple_layout.svg", height: 85%)),
-  caption: [Page layout of `letter_simple`. Every layout option is highlighted.],
-) <figure_pagebox_simple>
+  rect(inset: 0.5pt, image("assets/letter-simple-layout.svg", height: 85%)),
+  caption: [Page layout of `letter-simple`. Every layout option is highlighted.],
+) <figure-pagebox-simple>
 
 = Postage Stamp
 == Deutsche Post
@@ -174,7 +174,7 @@ Deutsche Post offers digital franking marks that can be placed inside the addres
 Enable stamping in your code:
 
 ```typ
-#show: letter_simple.with(
+#show: letter-simple.with(
   // [...]
   stamp: true,
   // [...]
@@ -224,15 +224,15 @@ Note: This *ONLY* works with stamps of the format "DIN A4 Normalpapier (Einlegeb
   
   sort-functions: it => {
     (
-      "letter_simple":  11,
-      "letter_generic": 12,
+      "letter-simple":  11,
+      "letter-generic": 12,
       
-      "header_simple":   21,
-      "sender_box":      22,
-      "annotations_box": 23,
-      "recipient_box":   24,
-      "address_duobox":  25,
-      "address_tribox":  26,
+      "header-simple":   21,
+      "sender-box":      22,
+      "annotations-box": 23,
+      "recipient-box":   24,
+      "address-duobox":  25,
+      "address-tribox":  26,
       
     ).at(it.name, default: 99)
   }
