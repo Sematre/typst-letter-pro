@@ -103,7 +103,7 @@ maintainers to ensure they align with the project's goals and direction.
 This project is inspired by the following projects and resources:
 * [Wikipedia / DIN 5008](https://de.wikipedia.org/wiki/DIN_5008)
 * [Deutsche Post / DIN 5008 Vorlage](https://www.deutschepost.de/de/b/briefvorlagen/normbrief-din-5008-vorlage.html)
-* [Deutsche Post / Automationsfähige Briefsendungen](https://www.deutschepost.de/content/dam/dpag/images/P_p/printmailing/downloads/automationsfaehige-briefsendungen-2023.pdf)
+* [Deutsche Post / Automationsfähige Briefsendungen](https://www.deutschepost.de/dam/dpag/images/P_p/printmailing/downloads/dp-automationsfaehige-briefsendungen-2024.pdf)
 * [EDV Lehrgang / DIN-5008](https://www.edv-lehrgang.de/din-5008/)
 * [Ludwig Austermann / typst-din-5008-letter](https://github.com/ludwig-austermann/typst-din-5008-letter)
 * [Pascal Huber / typst-letter-template](https://github.com/pascal-huber/typst-letter-template)
