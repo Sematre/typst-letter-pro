@@ -401,7 +401,7 @@
 
 /// This function takes your whole document as its `body` and formats it as a simple letter.
 /// 
-/// Font is set to _Source Sans Pro_ without hyphenation. The body text will be justified.
+/// The default font is set to _Source Sans Pro_ without hyphenation. The body text will be justified.
 /// 
 /// - format (string): The format of the letter, which decides the position of the folding marks and the size of the header.
 ///   #table(
@@ -468,6 +468,11 @@
 ///   Missing fields will be set to the default. 
 ///   Note: There is no _rest_ field.
 /// 
+/// - font (string, array): Font used throughout the letter.
+/// 
+///   Keep in mind that some fonts may not be ideal for automated letter processing software
+///   and #link("https://en.wikipedia.org/wiki/Optical_character_recognition", text(blue)[OCR]) may fail.
+/// 
 /// - body (content, none): The content of the letter
 /// -> content
 #let letter-simple(
@@ -506,7 +511,9 @@
     top:    20mm,
     bottom: 20mm,
   ),
-  
+
+  font: "Source Sans Pro",
+
   body,
 ) = {
   margin = (
@@ -522,7 +529,7 @@
     author: sender.name,
   )
 
-  set text(font: "Source Sans Pro", hyphenate: false)
+  set text(font: font, hyphenate: false)
 
   // Create a simple header if there is none
   if header == none {
