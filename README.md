@@ -85,7 +85,11 @@ Then import the package in your document:
 ```
 
 ### Manual
-Download the ``letter-pro-v2.0.0.typ`` file from the [releases page](https://github.com/Sematre/typst-letter-pro/releases) and place it next to your document file.
+Download the ``letter-pro-v2.0.0.typ`` file from the [releases page](https://github.com/Sematre/typst-letter-pro/releases) and place it next to your document file, e.g., using *wget*:
+
+```bash
+wget https://github.com/Sematre/typst-letter-pro/releases/download/v2.0.0/letter-pro-v2.0.0.typ
+```
 
 Then import the package in your document:
 ```typst
