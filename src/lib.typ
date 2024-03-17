@@ -173,7 +173,13 @@
         row-gutter: 12pt,
         
         if page-count > 1 {
-          align(right, page-numbering(current-page, page-count))
+          if type(page-numbering) == str {
+            align(right, numbering(page-numbering, current-page, page-count))
+          } else if type(page-numbering) == function {
+            align(right, page-numbering(current-page, page-count))
+          } else if page-numbering != none {
+            panic("Unsupported option type!")
+          }
         },
         
         if current-page == 1 {
