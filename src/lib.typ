@@ -73,7 +73,7 @@
 ///     stroke: 0.5pt + gray,
 ///     
 ///     text(weight: "semibold")[Type], text(weight: "semibold")[Description],
-///     [string],   [A numbering pattern as specified by the official documentation of the #link("https://typst.app/docs/reference/meta/numbering/", text(blue)[_numbering_]) function.],
+///     [string],   [A numbering pattern as specified by the official documentation of the #link("https://typst.app/docs/reference/model/numbering/", text(blue)[_numbering_]) function.],
 ///     [function], [
 ///       A function that returns the page number for each page.\
 ///       Parameters:
