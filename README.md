@@ -11,7 +11,7 @@ The goal of typst-letter-pro is to simplify the process of creating business let
 while maintaining a clean and professional appearance. It offers predefined sections
 for the sender and recipient information, subject, date, header, footer and more.
 
-## [Documentation](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/documentation-v2.0.0.pdf)
+## [Documentation](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/documentation-v2.1.0.pdf)
 
 ## Example
 Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www.deutschepost.de/de/b/briefvorlagen/beschwerden.html#Einspruch)
@@ -21,7 +21,7 @@ Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www
 
 ### Code
 ```typst
-#import "@preview/letter-pro:2.0.0": letter-simple
+#import "@preview/letter-pro:2.1.0": letter-simple
 
 #set text(lang: "de")
 
@@ -76,30 +76,30 @@ Anja Ahlsen
 ### Preview repository
 Import the package in your document:
 ```typst
-#import "@preview/letter-pro:2.0.0": letter-simple
+#import "@preview/letter-pro:2.1.0": letter-simple
 ```
 
 ### Local namespace
 Download the repository to the local package namespace using Git:
 ```sh
-$ git clone -c advice.detachedHead=false https://github.com/Sematre/typst-letter-pro.git --depth 1 --branch v2.0.0 ~/.local/share/typst/packages/local/letter-pro/2.0.0
+$ git clone -c advice.detachedHead=false https://github.com/Sematre/typst-letter-pro.git --depth 1 --branch v2.1.0 ~/.local/share/typst/packages/local/letter-pro/2.1.0
 ```
 
 Then import the package in your document:
 ```typst
-#import "@local/letter-pro:2.0.0": letter-simple
+#import "@local/letter-pro:2.1.0": letter-simple
 ```
 
 ### Manual
-Download the ``letter-pro-v2.0.0.typ`` file from the [releases page](https://github.com/Sematre/typst-letter-pro/releases) and place it next to your document file, e.g., using *wget*:
+Download the ``letter-pro-v2.1.0.typ`` file from the [releases page](https://github.com/Sematre/typst-letter-pro/releases) and place it next to your document file, e.g., using *wget*:
 
 ```sh
-$ wget https://github.com/Sematre/typst-letter-pro/releases/download/v2.0.0/letter-pro-v2.0.0.typ
+$ wget https://github.com/Sematre/typst-letter-pro/releases/download/v2.1.0/letter-pro-v2.1.0.typ
 ```
 
 Then import the package in your document:
 ```typst
-#import "letter-pro-v2.0.0.typ": letter-simple
+#import "letter-pro-v2.1.0.typ": letter-simple
 ```
 
 ## Contributing

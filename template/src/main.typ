@@ -1,4 +1,4 @@
-#import "@preview/letter-pro:2.0.0": letter-simple
+#import "@preview/letter-pro:2.1.0": letter-simple
 
 #show: letter-simple.with(
   sender: (

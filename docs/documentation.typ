@@ -5,8 +5,8 @@
   hyphenate: false,
 )
 
-#let project-version = "2.0.0"
-#let project-authors = "Sematre"
+#let project-version = "2.1.0"
+#let project-authors = "Sematre and contributors"
 
 #set document(
   title: "Documentation for typst-letter-pro (Version " + project-version + ")",
@@ -114,7 +114,7 @@ The goal of typst-letter-pro is to simplify the process of creating business let
 = Quickstart
 
 ```typ
-#import "@preview/letter-pro:2.0.0": letter-simple
+#import "@preview/letter-pro:2.1.0": letter-simple
 
 #set text(lang: "de")
 
