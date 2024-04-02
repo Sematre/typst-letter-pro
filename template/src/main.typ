@@ -1,34 +1,49 @@
 #import "@preview/letter-pro:2.1.0": letter-simple
 
+#set text(lang: "de")
+
 #show: letter-simple.with(
   sender: (
-    name: "Jane Smith",
-    address: "Universal Exports, 1 Heavy Plaza, Morristown, NJ 07964",
+    name: "Anja Ahlsen",
+    address: "Deutschherrenufer 28, 60528 Frankfurt",
     extra: [
-      (312) 555-0690
-    ]
+      Telefon: #link("tel:+4915228817386")[+49 152 28817386]\
+      E-Mail: #link("mailto:aahlsen@example.com")[aahlsen\@example.com]\
+    ],
   ),
   
+  annotations: [Einschreiben - Rückschein],
   recipient: [
-    Mr. John Doe\
-    Acme Corp.\
-    123 Glennwood Ave\
-    Quarto Creek, VA 22438
+    Finanzamt Frankfurt\
+    Einkommenssteuerstelle\
+    Gutleutstraße 5\
+    60329 Frankfurt
   ],
-
+  
   reference-signs: (
-    ([Hello], [World!]),
+    ([Steuernummer], [333/24692/5775]),
   ),
   
-  date: "Morristown, June 9th, 2023",
-  subject: lorem(10),
+  date: "12. November 2014",
+  subject: "Einspruch gegen den ESt-Bescheid",
 )
 
-Dear Joe,
+Sehr geehrte Damen und Herren,
 
-#lorem(100)
+die von mir bei den Werbekosten geltend gemachte Abschreibung für den im
+vergangenen Jahr angeschafften Fotokopierer wurde von Ihnen nicht berücksichtigt.
+Der Fotokopierer steht in meinem Büro und wird von mir ausschließlich zu beruflichen
+Zwecken verwendet.
 
-Best,
+Ich lege deshalb Einspruch gegen den oben genannten Einkommensteuerbescheid ein
+und bitte Sie, die Abschreibung anzuerkennen.
+
+Anbei erhalten Sie eine Kopie der Rechnung des Gerätes.
+
+Mit freundlichen Grüßen
 #v(1cm)
-Jane Smith\
-Regional Director
+Anja Ahlsen
+
+#v(1fr)
+*Anlagen:*
+- Rechnung
