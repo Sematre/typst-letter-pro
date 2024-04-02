@@ -114,7 +114,7 @@ The goal of typst-letter-pro is to simplify the process of creating business let
 = Quickstart
 
 ```typ
-#import "@local/letter-pro:2.0.0": letter-simple
+#import "@preview/letter-pro:2.0.0": letter-simple
 
 #set text(lang: "de")
 

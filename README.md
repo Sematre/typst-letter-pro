@@ -17,11 +17,11 @@ for the sender and recipient information, subject, date, header, footer and more
 Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www.deutschepost.de/de/b/briefvorlagen/beschwerden.html#Einspruch)
 
 ### Preview ([PDF version](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/simple_letter.pdf))
-![Image of a simple letter created with typst-letter-pro](.github/assets/simple_letter.jpg)
+![Image of a simple letter created with typst-letter-pro](template/thumbnail.png)
 
 ### Code
 ```typst
-#import "@local/letter-pro:2.0.0": letter-simple
+#import "@preview/letter-pro:2.0.0": letter-simple
 
 #set text(lang: "de")
 
@@ -73,6 +73,12 @@ Anja Ahlsen
 ```
 
 ## Usage
+### Preview repository
+Import the package in your document:
+```typst
+#import "@preview/letter-pro:2.0.0": letter-simple
+```
+
 ### Local namespace
 Download the repository to the local package namespace using Git:
 ```sh
