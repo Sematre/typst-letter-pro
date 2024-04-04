@@ -549,8 +549,6 @@
         sender.name,
         if sender.address != none {
           sender.address.split(", ").join(linebreak())
-        } else {
-          "lul?"
         },
         extra: sender.at("extra", default: none),
       ))
