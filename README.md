@@ -14,7 +14,7 @@ for the sender and recipient information, subject, date, header, footer and more
 ## [Documentation](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/documentation-v2.1.0.pdf)
 
 ## Example
-Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://www.deutschepost.de/de/b/briefvorlagen/beschwerden.html#Einspruch)
+Text source: [Musterbrief Widerspruch gegen Einkommensteuerbescheid](https://web.archive.org/web/20230927152049/https://www.deutschepost.de/de/b/briefvorlagen/beschwerden.html#Einspruch)
 
 ### Preview ([PDF version](https://raw.githubusercontent.com/wiki/Sematre/typst-letter-pro/simple_letter.pdf))
 ![Image of a simple letter created with typst-letter-pro](template/thumbnail.png)
@@ -112,7 +112,7 @@ maintainers to ensure they align with the project's goals and direction.
 ## Acknowledgments
 This project is inspired by the following projects and resources:
 * [Wikipedia / DIN 5008](https://de.wikipedia.org/wiki/DIN_5008)
-* [Deutsche Post / DIN 5008 Vorlage](https://www.deutschepost.de/de/b/briefvorlagen/normbrief-din-5008-vorlage.html)
+* [Deutsche Post / DIN 5008 Vorlage](https://web.archive.org/web/20240223035339/https://www.deutschepost.de/de/b/briefvorlagen/normbrief-din-5008-vorlage.html)
 * [Deutsche Post / Automationsfähige Briefsendungen](https://www.deutschepost.de/dam/dpag/images/P_p/printmailing/downloads/dp-automationsfaehige-briefsendungen-2024.pdf)
 * [EDV Lehrgang / DIN-5008](https://www.edv-lehrgang.de/din-5008/)
 * [Ludwig Austermann / typst-din-5008-letter](https://github.com/ludwig-austermann/typst-din-5008-letter)
