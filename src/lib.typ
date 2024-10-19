@@ -161,11 +161,11 @@
     },
     
     footer-descent: 0%,
-    footer: locate(loc => {
+    footer: context {
       show: pad.with(top: 12pt, bottom: 12pt)
       
-      let current-page = loc.page()
-      let page-count = counter(page).final(loc).at(0)
+      let current-page = here().page()
+      let page-count = counter(page).final().first()
       
       grid(
         columns: 1fr,
@@ -186,7 +186,7 @@
           footer
         }
       )
-    }),
+    },
   )
   
   // Reverse the margin for the header, the address box and the information box
