@@ -16,8 +16,8 @@
 #set page(
   numbering: "1",
 
-  footer: locate(loc => {
-    let current-page = counter(page).at(loc).at(0)
+  footer: context {
+    let current-page = here().page()
 
     if current-page > 1 {
       grid(
@@ -40,7 +40,7 @@
         numbering("1", current-page),
       )
     }
-  })
+  }
 )
 
 #show raw.where(block: true): block.with(

@@ -457,7 +457,7 @@
 ///     stroke: 0.5pt + gray,
 ///     
 ///     text(weight: "semibold")[Type], text(weight: "semibold")[Description],
-///     [string],   [A numbering pattern as specified by the official documentation of the #link("https://typst.app/docs/reference/meta/numbering/", text(blue)[_numbering_]) function.],
+///     [string],   [A numbering pattern as specified by the official documentation of the #link("https://typst.app/docs/reference/model/numbering/", text(blue)[_numbering_]) function.],
 ///     [function], [
 ///       A function that returns the page number for each page.\
 ///       Parameters:
@@ -540,9 +540,9 @@
   // Create a simple header if there is none
   if header == none {
     header = pad(
-      left: margin.left,
-      right: margin.right,
-      top: margin.top,
+      left:   margin.left,
+      right:  margin.right,
+      top:    margin.top,
       bottom: 5mm,
       
       align(bottom + right, header-simple(
@@ -560,7 +560,7 @@
   let recipient-box   = recipient-box(recipient)
 
   let address-box     = address-tribox(sender-box, annotations-box, recipient-box, stamp: stamp)
-  if annotations == none and stamp == false {
+  if (annotations == none) and (stamp == false) {
     address-box = address-duobox(align(bottom, pad(bottom: 0.65em, sender-box)), recipient-box)
   }
   
