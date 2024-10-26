@@ -67,12 +67,13 @@
 ///   )
 ///   ```
 /// 
-/// - page-numbering (string, function, none): Defines the format of the page numbers.
+/// - page-numbering (auto, string, function, none): Defines the format of the page numbers.
 ///   #table(
 ///     columns: (auto, 1fr),
 ///     stroke: 0.5pt + gray,
 ///     
 ///     text(weight: "semibold")[Type], text(weight: "semibold")[Description],
+///     [auto],     [Automatically determines the document language and chooses an appropriate translation.],
 ///     [string],   [A numbering pattern as specified by the official documentation of the #link("https://typst.app/docs/reference/model/numbering/", text(blue)[_numbering_]) function.],
 ///     [function], [
 ///       A function that returns the page number for each page.\
@@ -106,9 +107,7 @@
   
   reference-signs: none,
   
-  page-numbering: (current-page, page-count) => {
-    "Page " + str(current-page) + " of " + str(page-count)
-  },
+  page-numbering: auto,
 
   margin: (
     left:   25mm,
@@ -173,7 +172,13 @@
         row-gutter: 12pt,
         
         if page-count > 1 {
-          if type(page-numbering) == str {
+          if page-numbering == auto {
+            if text.lang == "de" {
+              align(right)[Seite #current-page von #page-count]
+            } else {
+              align(right)[Page #current-page of #page-count]
+            }
+          } else if type(page-numbering) == str {
             align(right, numbering(page-numbering, current-page, page-count))
           } else if type(page-numbering) == function {
             align(right, page-numbering(current-page, page-count))
@@ -451,12 +456,13 @@
 /// - date (content, none): The date that will be displayed on the right below the subject.
 /// - subject (string, none): The subject line and the document title.
 /// 
-/// - page-numbering (string, function, none): Defines the format of the page numbers.
+/// - page-numbering (auto, string, function, none): Defines the format of the page numbers.
 ///   #table(
 ///     columns: (auto, 1fr),
 ///     stroke: 0.5pt + gray,
 ///     
 ///     text(weight: "semibold")[Type], text(weight: "semibold")[Description],
+///     [auto],     [Automatically determines the document language and chooses an appropriate translation.],
 ///     [string],   [A numbering pattern as specified by the official documentation of the #link("https://typst.app/docs/reference/model/numbering/", text(blue)[_numbering_]) function.],
 ///     [function], [
 ///       A function that returns the page number for each page.\
@@ -507,9 +513,7 @@
   date: none,
   subject: none,
 
-  page-numbering: (current-page, page-count) => {
-    "Page " + str(current-page) + " of " + str(page-count)
-  },
+  page-numbering: auto,
 
   margin: (
     left:   25mm,
