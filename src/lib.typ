@@ -427,7 +427,7 @@
 ///     [DIN-5008-B], [105mm, 210mm], [45mm],
 ///   )
 /// 
-/// - header (content, none): The header that will be displayed at the top of the first page. If header is set to _none_, a default header will be generaded instead.
+/// - header (auto, content, none): The header that will be displayed at the top of the first page. If header is set to _auto_, a default header will be generaded instead.
 /// - footer (content, none): The footer that will be displayed at the bottom of the first page. It automatically grows upwords depending on its body. Make sure to leave enough space in the page margins.
 /// 
 /// - folding-marks (boolean): The folding marks that will be displayed at the left margin.
@@ -490,7 +490,7 @@
 #let letter-simple(
   format: "DIN-5008-B",
   
-  header: none,
+  header: auto,
   footer: none,
 
   folding-marks: true,
@@ -542,7 +542,7 @@
   set text(font: font, hyphenate: false)
 
   // Create a simple header if there is none
-  if header == none {
+  if header == auto {
     header = pad(
       left:   margin.left,
       right:  margin.right,
