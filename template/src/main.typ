@@ -1,4 +1,4 @@
-#import "@preview/letter-pro:2.1.0": letter-simple
+#import "@preview/letter-pro:3.0.0": letter-simple
 
 #set text(lang: "de")
 
