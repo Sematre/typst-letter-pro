@@ -534,10 +534,17 @@
   )
   
   // Configure page and text properties.
-  set document(
-    title: subject,
-    author: sender.name,
-  )
+  if sender.name != none {
+    set document(
+      title: subject,
+      author: sender.name
+    )
+  }
+  else {
+    set document(
+      title: subject,
+    )
+  }
 
   set text(font: font, hyphenate: false)
 
