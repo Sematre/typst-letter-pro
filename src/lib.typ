@@ -163,7 +163,7 @@
     footer: context {
       show: pad.with(top: 12pt, bottom: 12pt)
       
-      let current-page = here().page()
+      let current-page = counter(page).get().first()
       let page-count = counter(page).final().first()
       
       grid(
